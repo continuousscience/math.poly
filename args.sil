@@ -1,0 +1,4 @@
+-- Number of args for each primitive.
+quadratic = 3
+cubic     = 3
+quartic   = 5

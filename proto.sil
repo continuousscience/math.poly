@@ -1,0 +1,6 @@
+-- Prototypes for included primitive functions
+
+quadratic = fun Float a, Float b, Float c -> (Int, Float, Float)
+cubic     = fun Float a, Float b, Float c -> (Int, Float, Float, Float)
+quartic   = fun Float a, Float b, Float c, Float d, Float e ->
+                (Int, Float, Float, Float, Float)
