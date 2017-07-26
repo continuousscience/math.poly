@@ -2,6 +2,7 @@
  * All solvers return the number of real roots.
  */
 
+#include <sil_ext.h>
 #include <math.h>
 
 // y = sqrt(x)
@@ -154,7 +155,7 @@ biquad:
         if(fabs(z[0]) < 1e-12) { // should have solved bi-quadratic.
             goto biquad;
         }
-        printf("Unable to find a root: %e %e %e, %e\n", p, q, r, z[0]);
+        //printf("Unable to find a root: %e %e %e, %e\n", p, q, r, z[0]);
         return 0;
     }
     double u = sqrt(z[0]);
@@ -199,7 +200,7 @@ int quartic(sil_State *S) {
     double c = sil_todouble(S, 2);
     double d = sil_todouble(S, 3);
     double e = sil_todouble(S, 4);
-    int n = solve_quartic(x[4], 1.0, b, c, d, e);
+    int n = solve_quartic(x, 1.0, b, c, d, e);
 
     sil_settop(S, 0);
     sil_pushinteger(S, n);
