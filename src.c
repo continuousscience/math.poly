@@ -42,10 +42,9 @@ int solve_quadratic(double x[2], double a, double b, double c) {
 
 int quadratic(sil_State *S) {
     double x[2];
-    double a = sil_todouble(S, 1);
-    double b = sil_todouble(S, 2);
-    double c = sil_todouble(S, 3);
-    int n = solve_quadratic(x, a, b, c);
+    double b = sil_todouble(S, 1);
+    double c = sil_todouble(S, 2);
+    int n = solve_quadratic(x, 1.0, b, c);
     sil_settop(S, 0);
     sil_pushinteger(S, n);
     sil_pushdouble(S, x[0]);
@@ -194,14 +193,13 @@ int solve_quartic(double x[4], double a, double b, double c,
     return n;
 }
 
-int cubic(sil_State *S) {
+int quartic(sil_State *S) {
     double x[4];
-    double a = sil_todouble(S, 1);
-    double b = sil_todouble(S, 2);
-    double c = sil_todouble(S, 3);
-    double d = sil_todouble(S, 4);
-    double e = sil_todouble(S, 5);
-    int n = solve_quartic(x[4], a, b, c, d, e);
+    double b = sil_todouble(S, 1);
+    double c = sil_todouble(S, 2);
+    double d = sil_todouble(S, 3);
+    double e = sil_todouble(S, 4);
+    int n = solve_quartic(x[4], 1.0, b, c, d, e);
 
     sil_settop(S, 0);
     sil_pushinteger(S, n);
